@@ -1,0 +1,7 @@
+Description: An example package
+Creator: NotHansCYDIa
+Version: 1.0.0
+Release: Stable
+Type: Package
+Bundle: com.nothanscydia.basicpkg
+Command: basicpkg
