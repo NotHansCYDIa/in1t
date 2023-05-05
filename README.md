@@ -13,9 +13,9 @@ If you want to put the command or sh in your system I know how to do that but it
 ## Commands
 You can run `./in1t.sh -h` to show all of the commands. or you read the commands below.
 
-**-h, --help** - Shows help menu
-**-i [Package]** - Installs a package
-**-r, --uninstall** - Uninstalls installed package
-**-c** - Checks if package is available
-**-C** - Checks if package is installed
-**-I, --info** - Checks info on package if available
+**-h, --help** - Shows help menu<br>
+**-i [Package]** - Installs a package<br>
+**-r, --uninstall** - Uninstalls installed package<br>
+**-c** - Checks if package is available<br>
+**-C** - Checks if package is installed<br>
+**-I, --info** - Checks info on package if available<br>
