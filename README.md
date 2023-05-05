@@ -1,6 +1,6 @@
 # <p align="center">in1t</p>
 **in1t** is a simple package manager made in shell. It is for jailbroken iOS devices, macOS and Linux. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
-> Warning
+> **Warning** if you're on Windows trying out in1t, it might be unstable.
 
 
 ## Installation
@@ -9,7 +9,7 @@ Open Terminal or Command Prompt then Clone this repo and go to the directory.
 git clone --recursive https://github.com/NotHansCYDIa/in1t && cd in1t
 ```
 then run `chmod +x in1t.sh`.
-If you want to execute the command without .sh, Optionally you can do `mv in1t.sh in1t` to make it an executable *(might not work on windows idk.)*.
+If you want to execute the command without .sh, Optionally you can do `mv in1t.sh in1t` to make it an executable.
 If you want to put the command or sh in your system I know how to do that but it might not work and I am still working on it.
 
 ## Commands
