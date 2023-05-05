@@ -1,5 +1,7 @@
 # <p align="center">in1t</p>
-**in1t** is a simple package manager made in shell. It is for jailbroken iOS devices, macOS, Linux and Windows. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
+**in1t** is a simple package manager made in shell. It is for jailbroken iOS devices, macOS and Linux. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
+> Warning
+
 
 ## Installation
 Open Terminal or Command Prompt then Clone this repo and go to the directory.
