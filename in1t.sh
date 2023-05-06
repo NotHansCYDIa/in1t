@@ -19,8 +19,6 @@ show_help() {
 
 if [ $# -eq 0 ]; then
     echo -e "\033[1min1t\033[0m: A simple package manager made in shell"
-    echo -e "\033[1m\033[1m\033[31mFailed\033[0m\033[1m\033[0m"
-                        echo -e "\033[1;38;5;226mInstalling Package..."
     exit 0
 fi
 
