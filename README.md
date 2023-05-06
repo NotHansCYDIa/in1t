@@ -1,6 +1,6 @@
 # <p align="center">in1t</p>
 <p align="center"><b>A fast and simple APT Package Manager</b></p>
-**in1t** is a fadt and simple APT Package Manager made in shell. It is for jailbroken iOS devices, macOS and Linux. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
+**in1t** is a fast and simple APT Package Manager made in shell. It is for jailbroken iOS devices, macOS and Linux. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
 > **Warning** if you're on Windows trying out in1t, it might be unstable.
 
 
