@@ -13,7 +13,8 @@ If you want to execute the command without .sh, Optionally you can do `mv in1t.s
 If you want to put the command or sh in your system I know how to do that but it might not work and I am still working on it.
 
 ## Commands
-You can run `./in1t.sh -h` to show all of the commands. or you read the commands below.
+You can run `sudo ./in1t.sh -h` to show all of the commands. or you read the commands below.
+> **Note** that you need to have sudo before running `./in1t.sh`.
 
 **-h, --help** - Shows help menu<br>
 **-i [Package]** - Installs a package<br>
