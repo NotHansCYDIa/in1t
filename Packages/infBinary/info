@@ -1,0 +1,7 @@
+Description: Just 1 and 0 everywhere. You can do control + C to exit
+Creator: NotHansCYDIa
+Version: 1.0.0
+Release: Stable
+Type: Package
+Bundle: com.nothanscydia.binaryinfinte
+Command: infbinary
