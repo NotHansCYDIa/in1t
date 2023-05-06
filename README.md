@@ -21,3 +21,4 @@ You can run `./in1t.sh -h` to show all of the commands. or you read the commands
 **-c [Package]** - Checks if package is available<br>
 **-C [Package]** - Checks if package is installed<br>
 **-I, --info [Package]** - Checks info on package if available<br>
+**You can do `./in1t.sh -h` to see all commands**
