@@ -9,12 +9,12 @@ Open Terminal or Command Prompt then Clone this repo and go to the directory.
 ```zsh
 git clone --recursive https://github.com/NotHansCYDIa/in1t && cd in1t
 ```
-then run `chmod +x in1t.sh`.
-If you want to execute the command without .sh, Optionally you can do `mv in1t.sh in1t` to make it an executable.
-If you want to put the command or sh in your system I know how to do that but it might not work and I am still working on it.
+then run `chmod +x setup.sh`.
+After you do that install an in1t installation file from the releases in this repository. Put the installation file into the in1t folder then do `./setup.sh in1t_installation_1.0.0`.
+Make sure to replace `in1t_installation_1.0.0` into what version/installation file you've downloaded. Afer you enter the command you should now be able to run `in1t`.
 
 ## Commands
-You can run `./in1t.sh -h` to show all of the commands. or you read the commands below.
+You can run `in1t.sh -h` to show all of the commands. or you read the commands below.
 
 **-h, --help** - Shows help menu<br>
 **-i [Package]** - Installs a package<br>
@@ -22,4 +22,4 @@ You can run `./in1t.sh -h` to show all of the commands. or you read the commands
 **-c [Package]** - Checks if package is available<br>
 **-C [Package]** - Checks if package is installed<br>
 **-I, --info [Package]** - Checks info on package if available<br>
-**You can do `./in1t.sh -h` to see all commands**
+**You can do `in1t.sh -h` to see all commands**
