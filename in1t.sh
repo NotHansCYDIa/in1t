@@ -7,10 +7,12 @@ show_help() {
     echo "  -h, --help                 Show this help message"
     echo "  -i [Package]               Install Package"
     echo "  -r, -uninstall [Package]   Uninstalls Installed Package"
+    echo "  -u, --upgrade [Package]    Upgrades an installed package"
     echo "  -c [Package]               Checks if package is available"
     echo "  -C [Package]               Checks if package is installed"
     echo "  -I, --info [Package]       Shows info on package if available"
     echo "  -a, --allpkgs              Shows all packages available"
+    echo "  -A                         Shows all installed packages"
     echo ""
 
 }
@@ -77,6 +79,39 @@ while [ $# -gt 0 ]; do
             fi
             exit 0
             ;;
+        -u|--upgrade)
+            PKG="$2"
+            PACKAGE="Packages/$2/"
+            FOLDER="Packages/$2"
+            DIR=$(pwd)
+            if [ -d "$PACKAGE" ]; then
+                if [ -d "/usr/local/in1tpkg/$PKG" ]; then
+                    echo -e "\033[1;38;5;208mUpgrading Stage 1 Package...\033[0m"
+                    SH=$(cd "/usr/local/in1tpkg/$PKG" && find . -type f -name "*.sh")
+                    for file in $SH; do
+                        sudo rm -rf "/usr/local/bin/$(basename "$file" .sh)"
+                        rm -rf "/usr/local/in1tpkg/$PKG/$file"
+                    done
+                    rm -rf "/usr/local/in1tpkg/$PKG"
+                    echo -e "\033[1m\033[32mStage [1/2]\033[0m"
+                    echo -e "\033[1;38;5;214mUgrading Package...\033[0m"
+                    cp -R "$FOLDER" "/usr/local/in1tpkg"
+                    SH=$(cd "/usr/local/in1tpkg/$PKG" && find . -type f -name "*.sh")
+                    for file in $SH; do
+                        chmod +x "/usr/local/in1tpkg/$PKG/$file"
+                        sudo ln -s "/usr/local/in1tpkg/$PKG/$file" "/usr/local/bin/$(basename "$file" .sh)"
+                    done
+                    CMD=$(grep "Command:" "$PACKAGE/info" | cut -d ":" -f2- | sed 's/^[[:space:]]*//' | sed 's/[[:space:]]*$//')
+                    echo -e "\033[1;32mPackage upgraded!\033[0m"
+                    echo -e "\033[1;34mYou can now run: \033[1m$CMD\033[0m"
+                else
+                    echo -e "\033[1;33mPackage: $PKG is not installed.\033[0m"
+                fi
+            else
+                echo -e "\033[1m\033[33mPackage: $PKG is not available\033[0m"
+            fi
+            exit 0
+            ;;
         -c)
             PACKAGE="Packages/$2/"
             if [ -d "$PACKAGE" ]; then
@@ -120,13 +155,20 @@ echo " $VERSION ~ $RELEASE Release"
             exit 0
             ;;
         -a|--allpkgs)
-            echo "Available Packages:"
+            echo -e "\033[1mAvailable Packages:\033[0m"
             for package in /usr/local/in1tpkg/*/
             do
                 package=$(basename "$package")
-                echo "> $package"
+                echo -e "\033[1m\033[34m> $package\033[1m\033[34m"
             done
-            echo "To install a package do: $0 -i [Package]"
+            echo -e "\033[1;37mTo install a package do: $0 -i [Package]\033[1;37m"
+            exit 0
+            ;;
+        -A)
+            echo -e "\033[1mInstalled Packages:\033[0m"
+            for dir in /usr/local/in1tpkg/*/; do
+                echo -e "\033[1m\033[34m> $(basename "$dir")\033[1m\033[34m"
+            done
             exit 0
             ;;
         *)
