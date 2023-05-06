@@ -2,7 +2,8 @@
 <p align="center"><b>A fast and simple APT Package Manager</b></p>
 **in1t** is a fast and simple APT Package Manager made in shell. It is for jailbroken iOS devices, macOS and Linux. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
 > **Warning** if you're on Windows trying out in1t, it might be unstable.
-
+<br><br>
+<details><summary>Switch to legacy version</summary>If you don't wanna use **setup.sh**, you can go to the [legacy version](https://github.com/NotHansCYDIa/in1t/tree/legacy) of in1t.</details>
 
 ## Installation
 Open Terminal or Command Prompt then Clone this repo and go to the directory.
