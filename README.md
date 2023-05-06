@@ -1,5 +1,5 @@
 # <p align="center">in1t</p>
-**in1t** is a simple package manager made in shell. It is for jailbroken iOS devices, macOS and Linux. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
+**in1t** is a simple and fast Apt package manager made in shell. It is for jailbroken iOS devices, macOS and Linux. It doesn't use any commands that needs to be installed on the system like python, brew, etc.
 > **Warning** if you're on Windows trying out in1t, it might be unstable.
 
 
@@ -13,8 +13,7 @@ If you want to execute the command without .sh, Optionally you can do `mv in1t.s
 If you want to put the command or sh in your system I know how to do that but it might not work and I am still working on it.
 
 ## Commands
-You can run `sudo ./in1t.sh -h` to show all of the commands. or you read the commands below.
-> **Note** that you need to have sudo before running `./in1t.sh`.
+You can run `./in1t.sh -h` to show all of the commands. or you read the commands below.
 
 **-h, --help** - Shows help menu<br>
 **-i [Package]** - Installs a package<br>
