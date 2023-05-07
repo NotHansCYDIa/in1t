@@ -21,4 +21,8 @@ mv "$1" "in1t"
 chmod +x "in1t"
 sudo ln -s "$DIR/in1t" /usr/local/bin/in1t
 
-echo "in1t setup is complete! You can now run: in1t -h"
+if [ $? -eq 0 ]; then
+  echo "in1t setup is complete! You can now run: in1t -h"
+else
+  echo "Error: something went wrong during installation"
+fi
