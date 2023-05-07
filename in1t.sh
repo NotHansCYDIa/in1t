@@ -2,17 +2,17 @@
 
 show_help() {
     echo "\033[1min1t\033[0m: A simple package manager made in shell"
-    echo -e "Usage: \033[1m$0 [OPTIONS]\033[1m"
-    echo "Options:"
-    echo "  -h, --help                 Show this help message"
-    echo "  -i [Package]               Install Package"
-    echo "  -r, -uninstall [Package]   Uninstalls Installed Package"
-    echo "  -u, --upgrade [Package]    Upgrades an installed package"
-    echo "  -c [Package]               Checks if package is available"
-    echo "  -C [Package]               Checks if package is installed"
-    echo "  -I, --info [Package]       Shows info on package if available"
+    echo -e "Usage: \033[1m$0 [ARGUMENTS]\033[1m"
+    echo "Arguments:"
     echo "  -a, --allpkgs              Shows all packages available"
     echo "  -A                         Shows all installed packages"
+    echo "  -c <Package>               Checks if package is available"
+    echo "  -C <Package>               Checks if package is installed"
+    echo "  -h, --help                 Show this help message"
+    echo "  -i <Package>               Install Package"
+    echo "  -I, --info <Package>       Shows info on package if available"
+    echo "  -r, -uninstall <Package>   Uninstalls Installed Package"
+    echo "  -u, --upgrade <Package>    Upgrades an installed package"
     echo ""
 
 }
@@ -153,8 +153,9 @@ echo " $VERSION ~ $RELEASE Release"
             exit 0
             ;;
         -a|--allpkgs)
+            DIR=$(pwd)
             echo -e "\033[1mAvailable Packages:\033[0m"
-            for package in /usr/local/in1tpkg/*/
+            for package in "$DIR/Packages/"*/
             do
                 package=$(basename "$package")
                 echo -e "\033[1m\033[34m> $package\033[1m\033[34m"
