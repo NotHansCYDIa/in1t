@@ -1,0 +1,7 @@
+Description: Create your own packages and publish it to in1t!
+Creator: NotHansCYDIa
+Version: 1.0.0
+Release: Stable
+Type: Utilities
+Bundle: com.nothanscydia.mkpkg
+Command: mkpkg
