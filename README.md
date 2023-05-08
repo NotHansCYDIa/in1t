@@ -18,3 +18,6 @@ To install in1t, open Command Prompt/Terminal. And run
 git clone --recursive https://github.com/NotHansCYDIa/in1t && cd in1t
 ```
 after you do that it should automatically go to the in1t directory. Make sure to install the in1t installation file *(in1t_installation_1.0.0, etc.)*, then run `chmod +x setup.sh` then after that run `./setup.sh in1t_installation_1.0.0`. Replace `in1t_installation_1.0.0` into the directory where you downloaded the installation file. After you press enter you shouls now be able to run `in1t`. If you want to see all commands then run `in1t -h`.
+
+# Submit Packages
+If you want your packages to be in in1t. then [go to this link.](https://forms.gle/dy83rJT5vnjU3ndGA)
