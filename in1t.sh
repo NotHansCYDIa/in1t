@@ -1,7 +1,7 @@
 #!/bin/bash
 
 show_help() {
-    echo "\033[1min1t\033[0m: A simple package manager made in shell"
+    echo -e "\033[1min1t\033[0m: A simple package manager made in shell"
     echo -e "Usage: $0 [ARGUMENTS]"
     echo "Arguments:"
     echo "  -a, --allpkgs              Shows all packages available"
