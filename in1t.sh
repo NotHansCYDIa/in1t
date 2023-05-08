@@ -2,19 +2,20 @@
 
 show_help() {
     echo "\033[1min1t\033[0m: A simple package manager made in shell"
-    echo -e "Usage: \033[1m$0 [ARGUMENTS]\033[1m"
+    echo -e "Usage: $0 [ARGUMENTS]"
     echo "Arguments:"
     echo "  -a, --allpkgs              Shows all packages available"
-    echo "  -A                         Shows all installed packages"
+    echo "  -A, --allinstalled         Shows all installed packages"
     echo "  -c <Package>               Checks if package is available"
     echo "  -C <Package>               Checks if package is installed"
     echo "  -h, --help                 Show this help message"
     echo "  -i <Package>               Install Package"
     echo "  -I, --info <Package>       Shows info on package if available"
     echo "  -r, -uninstall <Package>   Uninstalls Installed Package"
+    echo "  -s, --search <String>      Search for packages"
     echo "  -u, --upgrade <Package>    Upgrades an installed package"
+    echo "  -v  <Package>              Gets package version"
     echo ""
-
 }
 
 if [ $# -eq 0 ]; then
@@ -143,12 +144,12 @@ while [ $# -gt 0 ]; do
                     echo "$DESCRIPTION"
                     echo ""
                     echo "$CREATOR - $BUNDLE"
-echo " $VERSION ~ $RELEASE Release"
+                    echo "$VERSION ~ $RELEASE Release"
                 else
-                    echo "Info is not available for the package."
+                    echo -e "\033[1;33mInfo is not available for this package.\033[0m"
                 fi
             else
-                echo "Package: $2 not available or found."
+                echo -e "\033[1m\033[33mPackage is not available/found.\033[0m"
             fi
             exit 0
             ;;
@@ -163,11 +164,44 @@ echo " $VERSION ~ $RELEASE Release"
             echo -e "\033[1;37mTo install a package do: $0 -i [Package]\033[1;37m"
             exit 0
             ;;
-        -A)
+        -A|-allinstalled)
             echo -e "\033[1mInstalled Packages:\033[0m"
             for dir in /usr/local/in1tpkg/*/; do
                 echo -e "\033[1m\033[34m> $(basename "$dir")\033[1m\033[34m"
             done
+            exit 0
+            ;;
+        -s|--search)
+            DIR=$(pwd)
+            if [ -z "$2" ]; then
+                echo -e "\033[1;31mError: Search term not provided\033[0m"
+                exit 1
+            fi
+            echo -e "\033[1mAvailable Packages:\033[0m"
+            for PACKAGE_DIR in "$DIR/Packages"/*; do
+                package_name=$(basename "$PACKAGE_DIR")
+                if echo "$package_name" | grep -qi "$2"; then
+                    echo -e "\033[1m\033[34m> $package_name\033[1m\033[0m"
+                fi
+            done
+            echo -e "\033[1;37mTo install a package do: $0 -i [Package]\033[1;37m"
+            exit 0
+            ;;
+        -v)
+            PACKAGE="Packages/$2/"
+            FOLDER="Packages/$2"
+            PKG="$2"
+            if [ -d "$PACKAGE" ]; then
+                if [ -f "$PACKAGE/info" ]; then
+                    VERSION=$(grep "Version:" "$PACKAGE"/info | cut -d ":" -f2- | sed 's/^ *//')
+                    echo "= $PKG"
+                    echo "$VERSION"
+                else
+                    echo -e "\033[1;33mVersion is not available for this package.\033[0m"
+                fi
+            else
+                echo -e "\033[1m\033[33mPackage is not available/found.\033[0m"
+            fi
             exit 0
             ;;
         *)
