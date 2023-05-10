@@ -31,8 +31,8 @@ while [ $# -gt 0 ]; do
             exit 0
             ;;
         -i )
-            PACKAGE="Packages/$2/"
-            FOLDER="Packages/$2"
+            PACKAGE=".Packages/$2/"
+            FOLDER=".Packages/$2"
             PKG="$2"
             DIR=$(pwd)
             if [ -d "$FOLDER" ]; then
@@ -62,7 +62,7 @@ while [ $# -gt 0 ]; do
             exit 0
             ;;
         -r|-uninstall)
-            PACKAGE="Packages/$2/"
+            PACKAGE=".Packages/$2/"
             PKG="$2"
             if [ -d "/usr/local/in1tpkg/$PKG" ]; then
                 echo -e "\033[1;38;5;208mUninstalling Package...\033[0m"
@@ -80,8 +80,8 @@ while [ $# -gt 0 ]; do
             ;;
         -u|--upgrade)
             PKG="$2"
-            PACKAGE="Packages/$2/"
-            FOLDER="Packages/$2"
+            PACKAGE=".Packages/$2/"
+            FOLDER=".Packages/$2"
             DIR=$(pwd)
             if [ -d "$PACKAGE" ]; then
                 if [ -d "/usr/local/in1tpkg/$PKG" ]; then
@@ -112,7 +112,7 @@ while [ $# -gt 0 ]; do
             exit 0
             ;;
         -c)
-            PACKAGE="Packages/$2/"
+            PACKAGE=".Packages/$2/"
             if [ -d "$PACKAGE" ]; then
                 echo -e "\033[1m\033[32mPackage $2 is available. You can install by doing: $0 -i $2\033[0m"
             else
@@ -130,8 +130,8 @@ while [ $# -gt 0 ]; do
             exit 0
             ;;
         -I|--info)
-            PACKAGE="Packages/$2/"
-            FOLDER="Packages/$2"
+            PACKAGE=".Packages/$2/"
+            FOLDER=".Packages/$2"
             PKG="$2"
             if [ -d "$PACKAGE" ]; then
                 if [ -f "$PACKAGE/info" ]; then
@@ -156,7 +156,7 @@ while [ $# -gt 0 ]; do
         -a|--allpkgs)
             DIR=$(pwd)
             echo -e "\033[1mAvailable Packages:\033[0m"
-            for package in "$DIR/Packages/"*/
+            for package in "$DIR/.Packages/"*/
             do
                 package=$(basename "$package")
                 echo -e "\033[1m\033[34m> $package\033[1m\033[34m"
@@ -188,8 +188,8 @@ while [ $# -gt 0 ]; do
             exit 0
             ;;
         -v)
-            PACKAGE="Packages/$2/"
-            FOLDER="Packages/$2"
+            PACKAGE=".Packages/$2/"
+            FOLDER=".Packages/$2"
             PKG="$2"
             if [ -d "$PACKAGE" ]; then
                 if [ -f "$PACKAGE/info" ]; then
