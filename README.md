@@ -1,7 +1,7 @@
 <h1 align="center">in1t</h1>
 <p align="center">
   <b>A simple and fast APT manager made in shell.</b>
-</p>
+</p><br><br>
 
 **in1t** is only compatible with **MacOS**, **Linux**, and **iOS (Jailbroken)**. It is **not** compatible with Windows.
 
