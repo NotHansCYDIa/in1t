@@ -1,4 +1,5 @@
 echo "Welcome to in1t setup!"
+# didnt do anything on setup.sh
 
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <in1t_installation_file>"
@@ -26,3 +27,4 @@ if [ $? -eq 0 ]; then
 else
   echo "Error: something went wrong during installation"
 fi
+
