@@ -8,12 +8,6 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     steps:
-      - name: LS Check
+      - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}/
-      - name: Artifact Deployment
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-artifact
-          path: README.md
-  
+          ls ${{ github.workspace }}
