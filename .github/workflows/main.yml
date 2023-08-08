@@ -6,11 +6,13 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest]
     steps:
-      - name: test
+      - name: LS Check
+        run: ls ${{ github.workspace }}
+      - name: Artifact Deployment
         uses: actions/upload-artifact@v3
         with:
           name: test-artifact
-          path: ${{ github.workspace }}/README.md
+          path: README.md
   
