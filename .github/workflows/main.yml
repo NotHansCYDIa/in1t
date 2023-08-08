@@ -1,4 +1,4 @@
-name: in1t Shell Workflow
+name: in1t Canary Builds
 
 on: [push]
 jobs:
@@ -12,5 +12,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-artifact
-          path: ${{ github.workspace }}.README.md
+          path: ${{ github.workspace }}/README.md
   
