@@ -9,7 +9,8 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: LS Check
-        run: ls ${{ github.workspace }}
+        run: |
+          ls ${{ github.workspace }}
       - name: Artifact Deployment
         uses: actions/upload-artifact@v3
         with:
