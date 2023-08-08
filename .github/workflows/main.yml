@@ -2,12 +2,15 @@ name: in1t Shell Workflow
 
 on: [push]
 jobs:
-  artifacts:
+  artifact:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
-
-    - name: test
-      run: echo lol
+    steps:
+      - name: test
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-artifact
+          path: ${{ github.workspace }}.README.md
   
