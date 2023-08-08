@@ -1,10 +1,11 @@
 name: in1t Canary Build
-run-name: ${{ github.actor }} fix arm33333 bug
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+        uses: actions/checkout@v3
+        with:
+          run: |
+            ls ${{ github.workspace }}
