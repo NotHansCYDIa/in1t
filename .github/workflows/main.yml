@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: LS Check
         run: |
-          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/
       - name: Artifact Deployment
         uses: actions/upload-artifact@v3
         with:
