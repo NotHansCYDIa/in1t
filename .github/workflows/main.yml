@@ -7,7 +7,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macOS-latest]
     steps:
-      - name: LS
-        run: |
-          ls
-          ls ${{ github.workspace }}
+      - run: pwd
+      - run: ls
+      - run: pwd ${{ github.workspace }}
+      - run: ls ${{ github.workspace }}
