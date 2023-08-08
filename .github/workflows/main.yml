@@ -2,8 +2,12 @@ name: in1t Canary Builds
 on: [push]
 jobs:
   artifact:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
     steps:
-      - name: List files in the repository
+      - name: LS
         run: |
+          ls
           ls ${{ github.workspace }}
