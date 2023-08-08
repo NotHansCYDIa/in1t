@@ -1,11 +1,7 @@
 name: in1t Canary Build
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Test:
     runs-on: ubuntu-latest
     steps:
-      - name: List files in the repository
-        uses: actions/checkout@v3
-        with:
-          run: |
-            ls ${{ github.workspace }}
+      - run: ls
